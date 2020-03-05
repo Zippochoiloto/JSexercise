@@ -47,7 +47,7 @@ $(document).ready(function() {
   });
 
   let count = 0;
-
+  let my_arr = [];
   //   Cau 3
   $("#3_button").click(function() {
     for (let i = count; i > 0; i--) {
@@ -65,7 +65,6 @@ $(document).ready(function() {
   });
 
   $("#3_resolve").click(function() {
-    let my_arr = [];
     for (let i = 1; i <= count; i++) {
       my_arr.push($(`#${i}`).val());
     }
@@ -79,29 +78,35 @@ $(document).ready(function() {
     $("#cau_B").text(`List giam dan: ` + my_arr);
     $("#cau_C").text(`Bạn có muốn thêm vào list ?`);
     $("#cau_C").after(`<div id = "addElement">
-      <button id = "3_Yes">Yes</button>
+      <button id = "3_Yes" onclick = "YesClickHandler()">Yes</button>
         <button id = "No">No</button>     
       </div>`);
   });
 
-  $("#3_Yes").click(function() {
-    console.log("Yes");
+  YesClickHandler = () => {
     $("#addElement").after(
-      `<div id = "elValue">1
-      <label>Phan tu them vao: </label>
-      <input type = "number" id = "el"/>
-      <br>
-      <button id = "Add" >ADD</button>
-      </div>`
+      `<div id = "elValue">
+        <label>Phan tu them vao: </label>
+        <input type = "number" id = "3_el"/>
+        <br>
+        <button id = "Add" onclick = "addHandler()" >ADD</button>
+        </div>`
     );
-  });
+  };
 
-  $("#Add").click(function() {
-    my_arr.push($("#Add").val());
+  addHandler = () => {
+    my_arr.push($("#3_el").val());
     console.log("my arr", my_arr);
     my_arr = my_arr.sort((a, b) => {
       return b - a;
     });
     $("#elValue").after(`<span>List sau khi them moi: ${my_arr}</span>`);
-  });
+  };
+  $("#Add").click(function() {});
+
+  GenderNum = () => {
+    for (let i = 1000; i < 9999; i++) {}
+  };
+
+  isThuanNghich = num => {};
 });
