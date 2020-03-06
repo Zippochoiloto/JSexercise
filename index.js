@@ -248,11 +248,12 @@ $(document).ready(function() {
       0,
       my_arr9.length - 1
     );
-    if (index_find >= 0) {
+    if (index_find >= 0 && index_find !== false) {
       $("#9_findButton").after(
         `<div>Array sau khi sort: ${my_arr9}</div><div id = '9_result'>Index tim thay: ${index_find}</div>`
       );
-    } else {
+    }
+    if (index_find === false) {
       $("#9_findButton").after(`<div id = '9_result'>Can not find index</div>`);
     }
   };
@@ -279,8 +280,42 @@ $(document).ready(function() {
       let el = new Date($(`#10_${i}`).val());
       my_arr10.push(el);
     }
-    console.log("date", my_arr10[0]);
-    my_arr10 = my_arr10.sort((a, b) => b.getDate() - a.getDate());
-    console.log("array", my_arr10);
+    my_arr10 = my_arr10.sort((a, b) => b - a);
+    my_arr10.map((val, index) => {
+      $("#10_sortButton").after(
+        `<div id = "date${index}">${val.toLocaleDateString()}</div>`
+      );
+    });
   };
+
+  let count_no11 = 0;
+  $("#11_button").click(function() {
+    for (let i = count; i > 0; i--) {
+      $(`#11_${i}`).remove();
+      $(`#label${i}`).remove();
+    }
+    let num = parseInt($("#11_number").val());
+    count_no11 = num;
+    for (let i = num; i > 0; i--) {
+      $("#11_button").after(`<div id = "label${i}">
+      <label>Phan tu thu ${i}</label>
+      <input type = "number" id = 11_${i} />
+      </div>`);
+    }
+  });
+
+  $("#11_button_add").click(function() {
+    for (let i = count; i > 0; i--) {
+      $(`#11add_${i}`).remove();
+      $(`#label${i}`).remove();
+    }
+    let num = parseInt($("#11_number").val());
+    count_no11 = num;
+    for (let i = num; i > 0; i--) {
+      $("#11_button_add").after(`<div id = "label${i}">
+      <label>Phan tu thu ${i}</label>
+      <input type = "number" id = 11add_${i} />
+      </div>`);
+    }
+  });
 });
