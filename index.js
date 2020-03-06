@@ -125,7 +125,7 @@ $(document).ready(function() {
     }
     return true;
   };
-  
+
   // Cau 5
   getSum = () => {
     $("#5_sum").remove();
@@ -136,5 +136,151 @@ $(document).ready(function() {
     if (sum) {
       $("#5_button").after(`<span id =5_sum>Tổng các chữ số: ${sum}</span>`);
     }
+  };
+
+  // Cau 6
+  listNumber = () => {
+    let num = parseInt($("#6_number").val());
+    for (let i = num; i > 1; i--) {
+      if (isNguyenTo(i)) {
+        $("#6_button").after(`<span>${i},</span>`);
+      }
+    }
+  };
+
+  isNguyenTo = num => {
+    let checknum = true;
+    if (num === 1) return true;
+    for (let i = 2; i < num; i++) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+    return true;
+  };
+  let listFibo = [0, 1];
+  // Cau 7
+  listNumberFibo = () => {
+    num = parseInt($("#7_number").val());
+    while (listFibo[listFibo.length - 1] <= num) {
+      listFibo.push(
+        listFibo[listFibo.length - 1] + listFibo[listFibo.length - 2]
+      );
+    }
+    listFibo.splice(listFibo.length - 1, 1);
+  };
+
+  listFiboAndPrime = () => {
+    listNumberFibo();
+    listFibo.map((val, index) => {
+      if (!isNguyenTo(val)) {
+        listFibo.splice(index, 1);
+      }
+    });
+    $("#7_button").after(
+      `<span id= "listFibo">List Fibo và là số nguyên tố: ${listFibo}</span>`
+    );
+  };
+  //Cau 8
+  GiaiPT = () => {
+    let a = parseInt($("#8_number_1").val());
+    let b = parseInt($("#8_number_2").val());
+    let c = parseInt($("#8_number_3").val());
+    let d = parseInt($("#8_number_4").val());
+
+    let delta0 = b * b - 3 * a * c;
+    let delta1 = 2 * b * b * b - 9 * a * b * c + 27 * a * a * d;
+    let delta = (delta1 * delta1 - 4 * delta0 * delta0 * delta0) / (27 * a * a);
+    let C = Math.pow(
+      (Math.pow(delta1 * delta1 - 4 * delta0 * delta0 * delta0, -2) + delta1) /
+        2,
+      -3
+    );
+    let u = (-1 + Math.pow(-3)) / 2;
+    let ans1 = -(b + u * C + delta0 / (u * c)) / (3 * a);
+    let ans2 = -(b + u * u * C + delta0 / (u * u * c)) / (3 * a);
+    let ans3 = -(b + u * u * u * C + delta0 / (u * u * u * c)) / (3 * a);
+    console.log("answer", ans1);
+    $("#8_button").after(`<span id = "Ans1">${ans1}</span>`);
+    $("#8_button").after(`<span id = "Ans2">${ans2}</span>`);
+    $("#8_button").after(`<span id = "Ans3">${ans3}</span>`);
+  };
+  let count_no9 = 0;
+  my_arr9 = [];
+  //Cau 9
+  $("#9_button").click(function() {
+    for (let i = count; i > 0; i--) {
+      $(`#${i}`).remove();
+      $(`#label${i}`).remove();
+    }
+    let num = parseInt($("#9_number").val());
+    count_no9 = num;
+    for (let i = num; i > 0; i--) {
+      $("#9_button").after(`<div id = "label${i}">
+      <label>Phan tu thu ${i}</label>
+      <input type = "number" id = 9_${i} />
+      </div>`);
+    }
+  });
+
+  recursiveFunction = (arr, x, start, end) => {
+    if (start > end) return false;
+
+    let mid = Math.floor((start + end) / 2);
+
+    if (arr[mid] === x) return mid;
+    if (arr[mid] > x) return recursiveFunction(arr, x, start, mid - 1);
+    else return recursiveFunction(arr, x, mid + 1, end);
+  };
+
+  findIndex = () => {
+    my_arr9 = [];
+    for (let i = count_no9; i > 0; i--) {
+      my_arr9.push(parseInt($(`#9_${i}`).val()));
+      my_arr9 = my_arr9.sort(function(a, b) {
+        return a - b;
+      });
+    }
+    let find_number = parseInt($("#9_number_find").val());
+    let index_find = recursiveFunction(
+      my_arr9,
+      find_number,
+      0,
+      my_arr9.length - 1
+    );
+    if (index_find >= 0) {
+      $("#9_findButton").after(
+        `<div>Array sau khi sort: ${my_arr9}</div><div id = '9_result'>Index tim thay: ${index_find}</div>`
+      );
+    } else {
+      $("#9_findButton").after(`<div id = '9_result'>Can not find index</div>`);
+    }
+  };
+
+  let count_no10 = 0;
+  let my_arr10 = [];
+  $("#10_button").click(function() {
+    for (let i = count; i > 0; i--) {
+      $(`#${i}`).remove();
+      $(`#label${i}`).remove();
+    }
+    let num = parseInt($("#10_number").val());
+    count_no10 = num;
+    for (let i = num; i > 0; i--) {
+      $("#10_button").after(`<div id = "label${i}">
+      <label>Phan tu thu ${i}</label>
+      <input type = "date" id = 10_${i} />
+      </div>`);
+    }
+  });
+
+  sortArray = () => {
+    for (let i = count_no10; i > 0; i--) {
+      let el = new Date($(`#10_${i}`).val());
+      my_arr10.push(el);
+    }
+    console.log("date", my_arr10[0]);
+    my_arr10 = my_arr10.sort((a, b) => b.getDate() - a.getDate());
+    console.log("array", my_arr10);
   };
 });

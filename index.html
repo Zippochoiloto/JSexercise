@@ -4,21 +4,24 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="index.js"></script>
 </header>
+
 <body>
   <!-- Bai Tap 1 -->
 
   <h1>Exercise 1: Tim UCLN,BCNN</h1>
-  <form>
-    <label>Nhập vào số a: </label>
-    <input type="number" id="1_numberA" value="" /><br /><br />
-    <label>Nhập vào số b: </label>
-    <input type="number" id="1_numberB" value="" />
-  </form>
-  <br />
-
-  <button id="1_Button">Show Result</button>
-  <div id="resultUCLN">Result UCLN</div>
-  <div id="resultBCNN">Result BCNN</div>
+  <div>
+      <label>Nhập vào số a: </label>
+      <input type="number" id="1_numberA" value="" /><br /><br />
+      <label>Nhập vào số b: </label>
+      <input type="number" id="1_numberB" value="" />
+  
+    <br />
+  
+    <button id="1_Button">Show Result</button>
+    <div id="resultUCLN">Result UCLN</div>
+    <div id="resultBCNN">Result BCNN</div>
+  </div>
+    
 
   <!-- Bai tap 2  -->
   <h1>Exercise 2: Phân tích số nguyên thành các thừa số nguyên tố</h1>
@@ -52,9 +55,72 @@
   <h1>Excercise 5: Tính tổng các chữ số của một số nguyên</h1>
   <div>
     <label>Nhập vào số nguyên: </label>
-    <input type = "number" id = "5_number">
+    <input type="number" id="5_number" />
   </div>
-  <div id = "5_button">
-    <button onclick = "getSum()">Tính tổng</button>
+  <div id="5_button">
+    <button onclick="getSum()">Tính tổng</button>
   </div>
+
+  <!-- Bai tap 6 -->
+  <h1>Excercise 6: Liệt kê các số nguyên tố nhỏ hơn số cho trước</h1>
+  <div>
+    <label>Nhập vào số nguyên: </label>
+    <input type="number" id="6_number" />
+  </div>
+  <div id="6_button">
+    <button onclick="listNumber()">List Number</button>
+  </div>
+
+  <!-- Bai tap 7  -->
+  <h1>Excercise 7: Liệt kê các số nguyên tố nhỏ hơn số cho trước</h1>
+  <div>
+    <label>Nhập vào số nguyên: </label>
+    <input type="number" id="7_number" />
+  </div>
+  <div id="7_button">
+    <button onclick="listFiboAndPrime()">List Number</button>
+  </div>
+
+  <!-- Bai tap 8 -->
+  <h1>Excercise 8: Giai Phuong trinh bac 3</h1>
+  <div>
+    <label>Nhập vào số nguyên A: </label>
+    <input type="number" id="8_number_1" />
+  </div>
+  <div>
+    <label>Nhập vào số nguyên B: </label>
+    <input type="number" id="8_number_2" />
+  </div>
+  <div>
+    <label>Nhập vào số nguyên C: </label>
+    <input type="number" id="8_number_3" />
+  </div>
+  <div>
+    <label>Nhập vào số nguyên D: </label>
+    <input type="number" id="8_number_4" />
+  </div>
+  <button id = "8_button" onclick = "GiaiPT()">Giai Phuong Trinh</button>
+  </div>
+
+  <!-- Bai tap 9 -->
+  <h1>Excercise 9: Binary search</h1>
+  <div>
+      <label>Nhập vào số phần tử:</label>
+      <input type="number" id="9_number" />
+      <button id="9_button">Add Array</button>
+    </div>
+    <div>
+      <label>Phần tử cần tìm: </label>
+      <input id = "9_number_find" type = "number">
+    </div>
+    <button id = "9_findButton" onclick="findIndex()">Find Index</button>
+
+  <!-- Bai tap 10 -->
+  <h1>Excercise 10: Sort Array gồm các dates:</h1>
+  <div>
+      <label>Nhập vào số phần tử:</label>
+      <input type="number" id="10_number" />
+      <button id="10_button">Add Array</button>
+    </div>
+  <button id = "10_sortButton" onclick="sortArray()">Sort</button>
 </body>
