@@ -103,10 +103,38 @@ $(document).ready(function() {
     $("#elValue").after(`<span>List sau khi them moi: ${my_arr}</span>`);
   };
   $("#Add").click(function() {});
-
+  // Cau 4
   GenderNum = () => {
-    for (let i = 1000; i < 9999; i++) {}
+    let count = 0;
+    for (let i = 999999; i > 100000; i--) {
+      if (isThuanNghich(i)) {
+        count++;
+        $("#4_button").after(`<span> ${i}</span>`);
+      }
+    }
   };
 
-  isThuanNghich = num => {};
+  isThuanNghich = num => {
+    let listNumber = [];
+    listNumber = num.toString().split("");
+    // console.log("list", listNumber);
+    for (let i = 0; i < 3; i++) {
+      if (listNumber[i] !== listNumber[6 - i - 1]) {
+        return false;
+      }
+    }
+    return true;
+  };
+  
+  // Cau 5
+  getSum = () => {
+    $("#5_sum").remove();
+    let num = $("#5_number").val();
+    let listNumber = num.split("");
+    let sum = 0;
+    listNumber.map(val => (sum += parseInt(val)));
+    if (sum) {
+      $("#5_button").after(`<span id =5_sum>Tổng các chữ số: ${sum}</span>`);
+    }
+  };
 });
