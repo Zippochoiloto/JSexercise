@@ -258,6 +258,7 @@ $(document).ready(function() {
     }
   };
 
+  // Cau 10 
   let count_no10 = 0;
   let my_arr10 = [];
   $("#10_button").click(function() {
@@ -288,14 +289,15 @@ $(document).ready(function() {
     });
   };
 
-  let count_no11 = 0;
+  // Cau 11
+  let countNo11 = 0;
   $("#11_button").click(function() {
     for (let i = count; i > 0; i--) {
       $(`#11_${i}`).remove();
       $(`#label${i}`).remove();
     }
     let num = parseInt($("#11_number").val());
-    count_no11 = num;
+    countNo11 = num;
     for (let i = num; i > 0; i--) {
       $("#11_button").after(`<div id = "label${i}">
       <label>Phan tu thu ${i}</label>
@@ -303,14 +305,14 @@ $(document).ready(function() {
       </div>`);
     }
   });
-
+  let countNo11Add = 0;
   $("#11_button_add").click(function() {
     for (let i = count; i > 0; i--) {
       $(`#11add_${i}`).remove();
       $(`#label${i}`).remove();
     }
-    let num = parseInt($("#11_number").val());
-    count_no11 = num;
+    let num = parseInt($("#11_number_add").val());
+    countNo11Add = num;
     for (let i = num; i > 0; i--) {
       $("#11_button_add").after(`<div id = "label${i}">
       <label>Phan tu thu ${i}</label>
@@ -318,4 +320,30 @@ $(document).ready(function() {
       </div>`);
     }
   });
+  let myArr11 = []
+
+  getSum = () => {
+    for(let i = 1; i <= countNo11; i ++){
+      myArr11.push(parseInt($(`#11_${i}`).val()))
+
+    }
+    let sumPos = myArr11.reduce(countPositive,0)
+    let sumNeg = myArr11.reduce(countNegative,0)
+    $('#11_commands').after(`<div>Tong cac so duong: ${sumPos}</div>
+    <div>Tong cac so am: ${sumNeg}</div>`)
+    
+  }
+
+  countPositive = (sum,startVal) => {
+    if(startVal >=0){
+      return startVal += sum
+    }
+    return sum
+  }
+  countNegative = (sum,startVal) => {
+    if(startVal < 0){
+      return startVal += sum
+    }
+    return sum
+  }
 });
