@@ -258,7 +258,7 @@ $(document).ready(function() {
     }
   };
 
-  // Cau 10 
+  // Cau 10
   let count_no10 = 0;
   let my_arr10 = [];
   $("#10_button").click(function() {
@@ -320,30 +320,69 @@ $(document).ready(function() {
       </div>`);
     }
   });
-  let myArr11 = []
+  let myArr11 = [];
 
   getSum = () => {
-    for(let i = 1; i <= countNo11; i ++){
-      myArr11.push(parseInt($(`#11_${i}`).val()))
+    for (let i = 1; i <= countNo11; i++) {
+      myArr11.push(parseInt($(`#11_${i}`).val()));
+    }
+    let sumPos = myArr11.reduce(countPositive, 0);
+    let sumNeg = myArr11.reduce(countNegative, 0);
+    $("#11_commands").after(`<div>Tong cac so duong: ${sumPos}</div>
+    <div>Tong cac so am: ${sumNeg}</div>`);
+  };
 
+  countPositive = (sum, startVal) => {
+    if (startVal >= 0) {
+      return (startVal += sum);
     }
-    let sumPos = myArr11.reduce(countPositive,0)
-    let sumNeg = myArr11.reduce(countNegative,0)
-    $('#11_commands').after(`<div>Tong cac so duong: ${sumPos}</div>
-    <div>Tong cac so am: ${sumNeg}</div>`)
-    
-  }
+    return sum;
+  };
+  countNegative = (sum, startVal) => {
+    if (startVal < 0) {
+      return (startVal += sum);
+    }
+    return sum;
+  };
 
-  countPositive = (sum,startVal) => {
-    if(startVal >=0){
-      return startVal += sum
+  findSecondLargest = () => {
+    let calculatedMyArr = myArr11;
+    for (let i = 1; i <= countNo11; i++) {
+      calculatedMyArr.push(parseInt($(`#11_${i}`).val()));
     }
-    return sum
-  }
-  countNegative = (sum,startVal) => {
-    if(startVal < 0){
-      return startVal += sum
+    let min = Math.min(...calculatedMyArr);
+    calculatedMyArr.forEach((val, index) => {
+      if (val === min) {
+        calculatedMyArr.splice(index, 1);
+      }
+    });
+    let min2nd = Math.min(...calculatedMyArr);
+    $("#11_commands").after(`<div>Số nhỏ thứ hai trong dãy: ${min2nd}</div>`);
+  };
+
+  sortArray = () => {
+    console.log(myArr11)
+    let calculatedMyArr = myArr11;
+    let newArray = [];
+    for (let i = 1; i <= countNo11; i++) {
+      calculatedMyArr.push(parseInt($(`#11_${i}`).val()));
     }
-    return sum
-  }
+    calculatedMyArr = calculatedMyArr.sort((a, b) => {
+      return b - a;
+    });
+    $("#11_commands").after(`<div>Dãy được sắp xếp lại từ lớn đến bé: ${calculatedMyArr}</div>`);
+    calculatedMyArr = calculatedMyArr.sort((a, b) => {
+      return a - b;
+    });
+    $("#11_commands").after(`<div>Dãy được sắp xếp lại từ nhỏ đến lớn: ${calculatedMyArr}</div>`);
+    calculatedMyArr.map(val => {
+      if(val % 2 === 0){
+        newArray.push(val)
+      }else{
+        newArray.unshift(val)
+      }
+    })
+    $("#11_commands").after(`<div>Sắp xếp theo chẵn lẻ: ${newArray}</div>`);
+
+  };
 });
