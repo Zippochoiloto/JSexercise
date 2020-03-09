@@ -385,4 +385,10 @@ $(document).ready(function() {
     $("#11_commands").after(`<div>Sắp xếp theo chẵn lẻ: ${newArray}</div>`);
 
   };
+
+  deleteElement = () => {
+    
+  }
+
+
 });
