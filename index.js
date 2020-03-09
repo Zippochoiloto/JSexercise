@@ -393,6 +393,18 @@ $(document).ready(function() {
   };
 
   deleteElement = () => {
+    let calculatedMyArr = []
+    let delEl = parseInt($('#11_delete_num').val())
+    for (let i = 1; i <= countNo11; i++) {
+      calculatedMyArr.push(parseInt($(`#11_${i}`).val()));
+    }
+    calculatedMyArr.map((val,index) => {
+      if(val === delEl) {
+        calculatedMyArr.splice(index,1)
+      }
+    })
+    $("#11_commands").after(`<div>Dẫy đã được xóa: ${calculatedMyArr}</div>`);
+    
     
   }
   countOdd = (sum,startVal) => {
