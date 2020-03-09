@@ -321,15 +321,18 @@ $(document).ready(function() {
     }
   });
   let myArr11 = [];
-
+  let counterOdd = 0;
   getSum = () => {
     for (let i = 1; i <= countNo11; i++) {
       myArr11.push(parseInt($(`#11_${i}`).val()));
     }
-    let sumPos = myArr11.reduce(countPositive, 0);
-    let sumNeg = myArr11.reduce(countNegative, 0);
-    $("#11_commands").after(`<div>Tong cac so duong: ${sumPos}</div>
-    <div>Tong cac so am: ${sumNeg}</div>`);
+    let sumPos = myArr11.reduce(countPositive,0)
+    let sumNeg = myArr11.reduce(countNegative,0)
+    let sumOdd = myArr11.reduce(countOdd,0)
+    $('#11_commands').after(`<div>Tong cac so duong: ${sumPos}</div>
+    <div>Tong cac so am: ${sumNeg}</div>
+    <div>Tong cac so chan: ${sumOdd}</div>
+    <div>So phan tu chan: ${counterOdd}</div>`)
   };
 
   countPositive = (sum, startVal) => {
@@ -344,6 +347,9 @@ $(document).ready(function() {
     }
     return sum;
   };
+    
+    
+  
 
   findSecondLargest = () => {
     let calculatedMyArr = myArr11;
@@ -389,6 +395,12 @@ $(document).ready(function() {
   deleteElement = () => {
     
   }
-
+  countOdd = (sum,startVal) => {
+    if(startVal %2 === 0 && startVal > 0){
+      counterOdd +=1;
+      return startVal += sum
+    }
+    return sum
+  }
 
 });
