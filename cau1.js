@@ -1,6 +1,7 @@
 $(document).ready(function() {
   // Cau 1
   $("#1_Button").click(function() {
+    let check = false;
     let num1 = parseInt($("#1_numberA").val());
     let num2 = parseInt($("#1_numberB").val());
     if (num1 === 0 || num2 === 0) {

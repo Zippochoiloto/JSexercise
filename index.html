@@ -2,7 +2,7 @@
 
 <header>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <!-- <script src="index.js"></script> -->
+  <script src="index.js"></script>
   <script src="cau1.js"></script>
   <script src="cau2.js"></script>
   <script src="cau3.js"></script>
@@ -15,166 +15,218 @@
   <script src="cau10.js"></script>
   <script src="cau11.js"></script>
   <script src="cau12.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </header>
-<div id="exercise-content" >
+<div id="exercise-content">
 
-<body>
-  <div >
-    <!-- Bai Tap 1 -->
-    <h3>Exercise 1: Tim UCLN,BCNN</h3>
+  <body>
     <div>
-      <label>Nhập vào số a: </label>
-      <input type="number" id="1_numberA" value="" /><br /><br />
-      <label>Nhập vào số b: </label>
-      <input type="number" id="1_numberB" value="" />
+      <h3>List Excercise</h3>
+      <input type='checkbox' id='cau1' value="Cau 1" onclick="clickHandler1()"><label>Cau 1</label><br>
+      <input type='checkbox' id='cau2' value="Cau 2" onclick="clickHandler2()"><label>Cau 2</label><br>
+      <input type='checkbox' id='cau3' value="Cau 3" onclick="clickHandler3()"><label>Cau 3</label><br>
+      <input type='checkbox' id='cau4' value="Cau 4" onclick="clickHandler4()"><label>Cau 4</label><br>
+      <input type='checkbox' id='cau5' value="Cau 5" onclick="clickHandler5()"><label>Cau 5</label><br>
+      <input type='checkbox' id='cau6' value="Cau 6" onclick="clickHandler6()"><label>Cau 6</label><br>
+      <input type='checkbox' id='cau7' value="Cau 7" onclick="clickHandler7()"><label>Cau 7</label><br>
+      <input type='checkbox' id='cau8' value="Cau 8" onclick="clickHandler8()"><label>Cau 8</label><br>
+      <input type='checkbox' id='cau9' value="Cau 9" onclick="clickHandler9()"><label>Cau 9</label><br>
+      <input type='checkbox' id='cau10' value="Cau 10" onclick="clickHandler10()"><label>Cau 10</label><br>
+      <input type='checkbox' id='cau11' value="Cau 11" onclick="clickHandler11()"><label>Cau 11</label><br>
+      <input type='checkbox' id='cau12' value="Cau 12" onclick="clickHandler12()"><label>Cau 12</label><br>
 
-      <br />
+      <!-- Bai Tap 1 -->
+      <div id="cau_1" style = "display: none;">
+        <h3>Exercise 1: Tim UCLN,BCNN</h3>
+        <div>
+          <label>Nhập vào số a: </label>
+          <input type="number" id="1_numberA" value="" /><br /><br />
+          <label>Nhập vào số b: </label>
+          <input type="number" id="1_numberB" value="" />
 
-      <button id="1_Button">Show Result</button>
-      <div id="resultUCLN">Result UCLN</div>
-      <div id="resultBCNN">Result BCNN</div>
+          <br />
+
+          <button id="1_Button">Show Result</button>
+          <div id="resultUCLN">Result UCLN</div>
+          <div id="resultBCNN">Result BCNN</div>
+        </div>
+      </div>
+
+
+
+      <!-- Bai tap 2  -->
+      <div id='cau_2'  style = "display: none;">
+        <h3>Exercise 2: Phân tích số nguyên thành các thừa số nguyên tố</h3>
+        <div>
+          <label>Nhập vào số n: </label>
+          <input type="number" id="2_number" />
+        </div>
+        <button id="2_Button">Show Result</button>
+        <div id="2_result">Result</div>
+
+      </div>
+
+      <!-- Bai tap 3 -->
+      <div id="cau_3"  style = "display: none;">
+        <h3>Exercise 3</h3>
+        <div>
+          <label>Nhập vào số phần tử:</label>
+          <input type="number" id="3_number" />
+          <button id="3_button">Add Array</button>
+        </div>
+        <button id="3_resolve">Resolve</button>
+        <div id="cau_A"></div>
+        <div id="cau_B"></div>
+        <div id="cau_C"></div>
+
+      </div>
+
+      <!-- Bai tap 4 -->
+      <div id="cau_4"  style = "display: none;">
+        <h3>Excercise 4: Tìm số thuận nghich có 6 chữ số</h3>
+        <h4>Click Button to gender number</h4>
+        <div id="4_button">
+          <button onclick="GenderNum()">Click</button>
+        </div>
+
+      </div>
+
+      <!-- Bai tap 5  -->
+      <div id="cau_5"  style = "display: none;">
+
+        <h3>Excercise 5: Tính tổng các chữ số của một số nguyên</h3>
+        <div>
+          <label>Nhập vào số nguyên: </label>
+          <input type="number" id="5_number" />
+        </div>
+        <div id="5_button">
+          <button onclick="getSum5()">Tính tổng</button>
+        </div>
+      </div>
+
+      <!-- Bai tap 6 -->
+      <div id="cau_6"  style = "display: none;">
+
+        <h3>Excercise 6: Liệt kê các số nguyên tố nhỏ hơn số cho trước</h3>
+        <div>
+          <label>Nhập vào số nguyên: </label>
+          <input type="number" id="6_number" />
+        </div>
+        <div id="6_button">
+          <button onclick="listNumber()">List Number</button>
+        </div>
+      </div>
+
+      <!-- Bai tap 7  -->
+      <div id="cau_7"  style = "display: none;">
+
+        <h3>Excercise 7: Liệt kê các số nguyên tố nhỏ hơn số cho trước</h3>
+        <div>
+          <label>Nhập vào số nguyên: </label>
+          <input type="number" id="7_number" />
+        </div>
+        <div id="7_button">
+          <button onclick="listFiboAndPrime()">List Number</button>
+        </div>
+      </div>
+
+      <!-- Bai tap 8 -->
+      <div id="cau_8"  style = "display: none;">
+
+        <h3>Excercise 8: Giai Phuong trinh bac 3</h3>
+        <div>
+          <label>Nhập vào số nguyên A: </label>
+          <input type="number" id="8_number_1" />
+        </div>
+        <div>
+          <label>Nhập vào số nguyên B: </label>
+          <input type="number" id="8_number_2" />
+        </div>
+        <div>
+          <label>Nhập vào số nguyên C: </label>
+          <input type="number" id="8_number_3" />
+        </div>
+        <div>
+          <label>Nhập vào số nguyên D: </label>
+          <input type="number" id="8_number_4" />
+        </div>
+        <button id="8_button" onclick="GiaiPT()">Giai Phuong Trinh</button>
+      </div>
+    </div>
+
+    <!-- Bai tap 9 -->
+    <div id="cau_9"  style = "display: none;">
+
+      <h3>Excercise 9: Binary search</h3>
+      <div>
+        <label>Nhập vào số phần tử:</label>
+        <input type="number" id="9_number" />
+        <button id="9_button">Add Array</button>
+      </div>
+      <div>
+        <label>Phần tử cần tìm: </label>
+        <input id="9_number_find" type="number">
+      </div>
+      <button id="9_findButton" onclick="findIndex()">Find Index</button>
     </div>
 
 
-    <!-- Bai tap 2  -->
-    <h3>Exercise 2: Phân tích số nguyên thành các thừa số nguyên tố</h3>
-    <div>
-      <label>Nhập vào số n: </label>
-      <input type="number" id="2_number" />
-    </div>
-    <button id="2_Button">Show Result</button>
-    <div id="2_result">Result</div>
+    <!-- Bai tap 10 -->
+    <div id="cau_10"  style = "display: none;">
 
-    <!-- Bai tap 3 -->
-    <h3>Exercise 3</h3>
-    <div>
-      <label>Nhập vào số phần tử:</label>
-      <input type="number" id="3_number" />
-      <button id="3_button">Add Array</button>
-    </div>
-    <button id="3_resolve">Resolve</button>
-    <div id="cau_A"></div>
-    <div id="cau_B"></div>
-    <div id="cau_C"></div>
-
-    <!-- Bai tap 4 -->
-    <h3>Excercise 4: Tìm số thuận nghich có 6 chữ số</h3>
-    <h4>Click Button to gender number</h4>
-    <div id="4_button">
-      <button onclick="GenderNum()">Click</button>
+      <h3>Excercise 10: Sort Array gồm các dates:</h3>
+      <div>
+        <label>Nhập vào số phần tử:</label>
+        <input type="number" id="10_number" />
+        <button id="10_button">Add Array</button>
+      </div>
+      <button id="10_sortButton" onclick="sortArray10()">Sort</button>
     </div>
 
-    <!-- Bai tap 5  -->
-    <h3>Excercise 5: Tính tổng các chữ số của một số nguyên</h3>
-    <div>
-      <label>Nhập vào số nguyên: </label>
-      <input type="number" id="5_number" />
-    </div>
-    <div id="5_button">
-      <button onclick="getSum5()">Tính tổng</button>
-    </div>
+    <!-- Bai tap 11 -->
+    <div id="cau_11"  style = "display: none;">
 
-    <!-- Bai tap 6 -->
-    <h3>Excercise 6: Liệt kê các số nguyên tố nhỏ hơn số cho trước</h3>
-    <div>
-      <label>Nhập vào số nguyên: </label>
-      <input type="number" id="6_number" />
-    </div>
-    <div id="6_button">
-      <button onclick="listNumber()">List Number</button>
-    </div>
+      <h3>Excercise 11</h3>
+      <div>
+        <label>Nhập vào số phần tử:</label>
+        <input type="number" id="11_number" />
+        <button id="11_button">Add Array</button>
+      </div>
+      <div>
+        <label>Nhập vào số muốn xóa:</label>
+        <input type="number" id="11_delete_num">
+      </div>
+      <div>
+        <label>Nhập vào số phần tử của dãy thứ 2:</label>
+        <input type="number" id="11_number_add" />
+        <button id="11_button_add">Add Array</button>
+      </div>
 
-    <!-- Bai tap 7  -->
-    <h3>Excercise 7: Liệt kê các số nguyên tố nhỏ hơn số cho trước</h3>
-    <div>
-      <label>Nhập vào số nguyên: </label>
-      <input type="number" id="7_number" />
-    </div>
-    <div id="7_button">
-      <button onclick="listFiboAndPrime()">List Number</button>
-    </div>
+      <div>
+        <label>Nhập vào phần tử muốn xóa</label>
+        <input type="number" id="11_number_delete" />
+      </div>
+      <div id="11_commands">
+        <button onclick="getSum()">Get Sum</button>
+        <button onclick="findSecondSmallest()">Find Second Smallest</button>
+        <button onclick="sortArray()">Sort Array</button>
+        <button onclick="deleteElement()">Delete Element</button>
+        <button onclick="compareArray()">Compare Array</button>
+        <button onclick="moveEl()">Move Element</button>
+        <button onclick="deleteMultipleElement()">Delete Multiple Element</button>
 
-    <!-- Bai tap 8 -->
-    <h3>Excercise 8: Giai Phuong trinh bac 3</h3>
-    <div>
-      <label>Nhập vào số nguyên A: </label>
-      <input type="number" id="8_number_1" />
+      </div>
     </div>
-    <div>
-      <label>Nhập vào số nguyên B: </label>
-      <input type="number" id="8_number_2" />
-    </div>
-    <div>
-      <label>Nhập vào số nguyên C: </label>
-      <input type="number" id="8_number_3" />
-    </div>
-    <div>
-      <label>Nhập vào số nguyên D: </label>
-      <input type="number" id="8_number_4" />
-    </div>
-    <button id="8_button" onclick="GiaiPT()">Giai Phuong Trinh</button>
-  </div>
-
-  <!-- Bai tap 9 -->
-  <h3>Excercise 9: Binary search</h3>
-  <div>
-    <label>Nhập vào số phần tử:</label>
-    <input type="number" id="9_number" />
-    <button id="9_button">Add Array</button>
-  </div>
-  <div>
-    <label>Phần tử cần tìm: </label>
-    <input id="9_number_find" type="number">
-  </div>
-  <button id="9_findButton" onclick="findIndex()">Find Index</button>
-
-  <!-- Bai tap 10 -->
-  <h3>Excercise 10: Sort Array gồm các dates:</h3>
-  <div>
-    <label>Nhập vào số phần tử:</label>
-    <input type="number" id="10_number" />
-    <button id="10_button">Add Array</button>
-  </div>
-  <button id="10_sortButton" onclick="sortArray10()">Sort</button>
-
-  <!-- Bai tap 11 -->
-  <h3>Excercise 11</h3>
-  <div>
-    <label>Nhập vào số phần tử:</label>
-    <input type="number" id="11_number" />
-    <button id="11_button">Add Array</button>
-  </div>
-  <div>
-    <label>Nhập vào số muốn xóa:</label>
-    <input type="number" id="11_delete_num">
-  </div>
-  <div>
-    <label>Nhập vào số phần tử của dãy thứ 2:</label>
-    <input type="number" id="11_number_add" />
-    <button id="11_button_add">Add Array</button>
-  </div>
-
-  <div>
-    <label>Nhập vào phần tử muốn xóa</label>
-    <input type="number" id="11_number_delete" />
-  </div>
-  <div id = "11_commands">
-    <button onclick="getSum()">Get Sum</button>
-    <button onclick="findSecondSmallest()">Find Second Smallest</button>
-    <button onclick="sortArray()">Sort Array</button>
-    <button onclick="deleteElement()">Delete Element</button>
-    <button onclick="compareArray()">Compare Array</button>
-    <button onclick="moveEl()">Move Element</button>
-    <button onclick="deleteMultipleElement()">Delete Multiple Element</button>
-
-  </div>
 </div>
 
 <!-- Bai tap 12 -->
-<h3>Excercise 12</h3>
+<div id="cau_12"  style = "display: none;">
+
+  <h3>Excercise 12</h3>
   <div>
     <label>Nhập vào chuỗi: </label>
-    <input type = "text" id = "12_string">
+    <input type="text" id="12_string">
   </div>
-  <button id = "12_sortButton" onclick="sortString()">Sort String</button>
-</body>
+  <button id="12_sortButton" onclick="sortString()">Sort String</button>
+  </body>
+</div>

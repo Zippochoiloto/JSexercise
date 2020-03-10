@@ -19,6 +19,5 @@ $(document).ready(function() {
     });
     $("#12_sortButton").after(`<div>Dãy xóa 3 phần tử: ${newStrArray}</div>`);
   };
-
   const isUpperCase = string => /^[A-Z]*$/.test(string);
 });
