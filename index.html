@@ -1,42 +1,76 @@
 <!DOCTYPE html>
 
 <header>
+  <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="index.js"></script>
-  <script src="cau1.js"></script>
-  <script src="cau2.js"></script>
-  <script src="cau3.js"></script>
-  <script src="cau4.js"></script>
-  <script src="cau5.js"></script>
-  <script src="cau6.js"></script>
-  <script src="cau7.js"></script>
-  <script src="cau8.js"></script>
-  <script src="cau9.js"></script>
-  <script src="cau10.js"></script>
-  <script src="cau11.js"></script>
-  <script src="cau12.js"></script>
-  <link rel="stylesheet" href="styles.css">
+  <script src="logic/cau1.js"></script>
+  <script src="logic/cau2.js"></script>
+  <script src="logic/cau3.js"></script>
+  <script src="logic/cau4.js"></script>
+  <script src="logic/cau5.js"></script>
+  <script src="logic/cau6.js"></script>
+  <script src="logic/cau7.js"></script>
+  <script src="logic/cau7.js"></script>
+  <script src="logic/cau9.js"></script>
+  <script src="logic/cau10.js"></script>
+  <script src="logic/cau11.js"></script>
+  <script src="logic/cau12.js"></script>
 </header>
 <div id="exercise-content">
 
   <body>
-    <div>
-      <h3>List Excercise</h3>
-      <input type='checkbox' id='cau1' value="Cau 1" onclick="clickHandler1()"><label>Cau 1</label><br>
-      <input type='checkbox' id='cau2' value="Cau 2" onclick="clickHandler2()"><label>Cau 2</label><br>
-      <input type='checkbox' id='cau3' value="Cau 3" onclick="clickHandler3()"><label>Cau 3</label><br>
-      <input type='checkbox' id='cau4' value="Cau 4" onclick="clickHandler4()"><label>Cau 4</label><br>
-      <input type='checkbox' id='cau5' value="Cau 5" onclick="clickHandler5()"><label>Cau 5</label><br>
-      <input type='checkbox' id='cau6' value="Cau 6" onclick="clickHandler6()"><label>Cau 6</label><br>
-      <input type='checkbox' id='cau7' value="Cau 7" onclick="clickHandler7()"><label>Cau 7</label><br>
-      <input type='checkbox' id='cau8' value="Cau 8" onclick="clickHandler8()"><label>Cau 8</label><br>
-      <input type='checkbox' id='cau9' value="Cau 9" onclick="clickHandler9()"><label>Cau 9</label><br>
-      <input type='checkbox' id='cau10' value="Cau 10" onclick="clickHandler10()"><label>Cau 10</label><br>
-      <input type='checkbox' id='cau11' value="Cau 11" onclick="clickHandler11()"><label>Cau 11</label><br>
-      <input type='checkbox' id='cau12' value="Cau 12" onclick="clickHandler12()"><label>Cau 12</label><br>
+    <div> 
+      <div id = "title">
+          <h3>List Excercise</h3>
+      </div>
+      <input type='checkbox' id='cau1' value="Cau 1" onclick="clickHandler1()"><label>Cau 1: Viết chương trình tìm ước
+        số chung lớn nhất, bội số chung nhỏ nhất của hai số tự nhiên a và b</label><br>
+      <input type='checkbox' id='cau2' value="Cau 2" onclick="clickHandler2()"><label>Cau 2: Viết chương trình phân tích
+        một số nguyên thành các thừa số nguyên tố</label><br>
+      <input type='checkbox' id='cau3' value="Cau 3" onclick="clickHandler3()"><label>Cau 3: Viết chương trình nhập vào
+        vào mảng A có n phần tử, các phần tử là những số nguyên lớn hơn 0 và nhỏ hơn 100 được nhập vào từ bàn phím. Thực
+        hiện các chức năng sau:<br>
+        a) Tìm phần tử lớn nhất và lớn thứ 2 trong mảng.<br>
+        b) Sắp xếp mảng theo thứ tự giảm dần .<br>
+        c) Nhập một số nguyên x và chèn x vào mảng A sao cho vẫn đảm bảo tính sắp xếp giảm dần.</label><br>
+      <input type='checkbox' id='cau4' value="Cau 4" onclick="clickHandler4()"><label>Cau 4: Một số được gọi là số thuận
+        nghịch độc nếu ta đọc từ trái sang phải hay từ phải sang trái số đó ta vẫn nhận được một số giống nhau. Hãy liệt
+        kê tất cả các số thuận nghịch độc có sáu chữ số </label><br>
+      <input type='checkbox' id='cau5' value="Cau 5" onclick="clickHandler5()"><label>Cau 5: Hãy viết chương trình tính
+        tổng các chữ số của một số nguyên bất kỳ. Ví dụ: Số 8545604 có tổng các chữ số là: 8+5+4+5+6+0+4=
+        32.</label><br>
+      <input type='checkbox' id='cau6' value="Cau 6" onclick="clickHandler6()"><label>Cau 6:Viết chương trình liệt kê
+        tất cả các số nguyên tố nhỏ hơn n cho trước.</label><br>
+      <input type='checkbox' id='cau7' value="Cau 7" onclick="clickHandler7()"><label>Cau 7: Nhập một số tự nhiên n. Hãy
+        liệt kê các số Fibonaci nhỏ hơn n là số nguyên tố. </label><br>
+      <input type='checkbox' id='cau8' value="Cau 8" onclick="clickHandler8()"><label>Cau 8: Viết chương trình giải
+        phương trình bậc 3</label><br>
+      <input type='checkbox' id='cau9' value="Cau 9" onclick="clickHandler9()"><label>Cau 9: Sử dụng binary search để
+        tìm kiếm index của một giá trị được nhập từ bàn phím</label><br>
+      <input type='checkbox' id='cau10' value="Cau 10" onclick="clickHandler10()"><label>Cau 10: Sort một array gồm các
+        dates</label><br>
+      <input type='checkbox' id='cau11' value="Cau 11" onclick="clickHandler11()"><label>Cau 11:Cho 1 dãy số gồm n phần
+        từ. Giá trị từng phần tử là số thực. Thực hiện các chương trình sau:<br>
+        1. Tính tổng các phần tử âm, tính tổng các phần tử dương<br>
+        2. Tính tổng và trung bình cộng của các phần tử chẵn. Đếm số phần tử là số chẵn<br>
+        3. Tìm số có giá trị nhỏ thứ hai trong dãy và in ra màn hình<br>
+        4. Sắp xếp lại dãy theo thứ tự tăng dần và giảm dần rồi hiện ra màn hình<br>
+        5. Sắp xếp lại dãy theo thứ tự chẵn lẻ<br>
+        6. Nhập vào biến có giá trị A và xóa các phần tử có giá trị A trong dãy số <br>
+        7. Nhập thêm 1 dãy số có n phần tử. In ra dãy số có giá trị từng phần tử bằng tổng giá trị của từng phần tử
+        trong 2 dãy số vừa nhập<br>
+        8. In ra dãy có giá trị xuất hiện trong cả 2 dãy vừa nhập<br>
+        9. In ra dãy gồm các phần tử chỉ xuất hiện trong 1 dãy.<br>
+        10. So sánh 2 dãy số vừa nhập và in ra dãy chứa giá trị chung của 2 dãy số <br>
+        11. Chuyển 5 phần tử cuối của dãy số vào giữa và lên đầu của dãy số <br>
+        12. Nhập vào số A. Xóa 3 phần từ phía sau phần từ có index là A. Xóa tất cả các phần từ nằm sau phần tử [A]. In
+        ra dãy số mới sau khi xóa.</label><br>
+      <input type='checkbox' id='cau12' value="Cau 12" onclick="clickHandler12()"><label>Cau 12: Cho 1 chuỗi “abcABC
+        DFEefD”. Sắp xếp lại chuỗi theo thứ tự alphabet những chữ in hoa sẽ được đẩy lên đầu “ABCDDFEabcef”</label><br>
 
       <!-- Bai Tap 1 -->
-      <div id="cau_1" style = "display: none;">
+      <div id="cau_1" class = questions>
         <h3>Exercise 1: Tim UCLN,BCNN</h3>
         <div>
           <label>Nhập vào số a: </label>
@@ -47,27 +81,27 @@
           <br />
 
           <button id="1_Button">Show Result</button>
-          <div id="resultUCLN">Result UCLN</div>
-          <div id="resultBCNN">Result BCNN</div>
+          <div id="resultUCLN"></div>
+          <div id="resultBCNN"></div>
         </div>
       </div>
 
 
 
       <!-- Bai tap 2  -->
-      <div id='cau_2'  style = "display: none;">
+      <div id='cau_2' class = questions>
         <h3>Exercise 2: Phân tích số nguyên thành các thừa số nguyên tố</h3>
         <div>
           <label>Nhập vào số n: </label>
           <input type="number" id="2_number" />
         </div>
         <button id="2_Button">Show Result</button>
-        <div id="2_result">Result</div>
+        <div id="2_result"></div>
 
       </div>
 
       <!-- Bai tap 3 -->
-      <div id="cau_3"  style = "display: none;">
+      <div id="cau_3" class = questions>
         <h3>Exercise 3</h3>
         <div>
           <label>Nhập vào số phần tử:</label>
@@ -82,7 +116,7 @@
       </div>
 
       <!-- Bai tap 4 -->
-      <div id="cau_4"  style = "display: none;">
+      <div id="cau_4" class = questions>
         <h3>Excercise 4: Tìm số thuận nghich có 6 chữ số</h3>
         <h4>Click Button to gender number</h4>
         <div id="4_button">
@@ -92,7 +126,7 @@
       </div>
 
       <!-- Bai tap 5  -->
-      <div id="cau_5"  style = "display: none;">
+      <div id="cau_5" class = questions>
 
         <h3>Excercise 5: Tính tổng các chữ số của một số nguyên</h3>
         <div>
@@ -105,7 +139,7 @@
       </div>
 
       <!-- Bai tap 6 -->
-      <div id="cau_6"  style = "display: none;">
+      <div id="cau_6" class = questions>
 
         <h3>Excercise 6: Liệt kê các số nguyên tố nhỏ hơn số cho trước</h3>
         <div>
@@ -118,9 +152,9 @@
       </div>
 
       <!-- Bai tap 7  -->
-      <div id="cau_7"  style = "display: none;">
+      <div id="cau_7" class = questions>
 
-        <h3>Excercise 7: Liệt kê các số nguyên tố nhỏ hơn số cho trước</h3>
+        <h3>Excercise 7: Liệt kê các số nguyên tố nhỏ hơn trong dãy Fibonacci nhỏ hơn số cho trước</h3>
         <div>
           <label>Nhập vào số nguyên: </label>
           <input type="number" id="7_number" />
@@ -131,7 +165,7 @@
       </div>
 
       <!-- Bai tap 8 -->
-      <div id="cau_8"  style = "display: none;">
+      <div id="cau_8" class = questions>
 
         <h3>Excercise 8: Giai Phuong trinh bac 3</h3>
         <div>
@@ -155,7 +189,7 @@
     </div>
 
     <!-- Bai tap 9 -->
-    <div id="cau_9"  style = "display: none;">
+    <div id="cau_9" class = questions>
 
       <h3>Excercise 9: Binary search</h3>
       <div>
@@ -172,7 +206,7 @@
 
 
     <!-- Bai tap 10 -->
-    <div id="cau_10"  style = "display: none;">
+    <div id="cau_10" class = questions>
 
       <h3>Excercise 10: Sort Array gồm các dates:</h3>
       <div>
@@ -184,27 +218,27 @@
     </div>
 
     <!-- Bai tap 11 -->
-    <div id="cau_11"  style = "display: none;">
+    <div id="cau_11" class = questions>
 
       <h3>Excercise 11</h3>
       <div>
         <label>Nhập vào số phần tử:</label>
-        <input type="number" id="11_number" />
+        <input type="number" id="number11" />
         <button id="11_button">Add Array</button>
       </div>
       <div>
         <label>Nhập vào số muốn xóa:</label>
-        <input type="number" id="11_delete_num">
+        <input type="number" id="delete_num11">
       </div>
       <div>
         <label>Nhập vào số phần tử của dãy thứ 2:</label>
-        <input type="number" id="11_number_add" />
+        <input type="number" id="number_add11" />
         <button id="11_button_add">Add Array</button>
       </div>
 
       <div>
         <label>Nhập vào phần tử muốn xóa</label>
-        <input type="number" id="11_number_delete" />
+        <input type="number" id="number_delete11" />
       </div>
       <div id="11_commands">
         <button onclick="getSum()">Get Sum</button>
@@ -217,16 +251,17 @@
 
       </div>
     </div>
-</div>
 
-<!-- Bai tap 12 -->
-<div id="cau_12"  style = "display: none;">
 
-  <h3>Excercise 12</h3>
-  <div>
-    <label>Nhập vào chuỗi: </label>
-    <input type="text" id="12_string">
-  </div>
-  <button id="12_sortButton" onclick="sortString()">Sort String</button>
+    <!-- Bai tap 12 -->
+    <div id="cau_12" class = questions>
+
+      <h3>Excercise 12</h3>
+      <div>
+        <label>Nhập vào chuỗi: </label>
+        <input type="text" id="12_string">
+      </div>
+      <button id="12_sortButton" onclick="sortString()">Sort String</button>
   </body>
+</div>
 </div>

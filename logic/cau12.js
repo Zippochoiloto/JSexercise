@@ -1,5 +1,6 @@
 $(document).ready(function() {
   sortString = () => {
+    $("#sortArr12").remove();
     let string = $("#12_string").val();
     string = string.trim();
     console.log("new string", string);
@@ -17,7 +18,9 @@ $(document).ready(function() {
     lowerArray.map(val => {
       newStrArray.push(val);
     });
-    $("#12_sortButton").after(`<div>Dãy xóa 3 phần tử: ${newStrArray}</div>`);
+    $("#12_sortButton").after(
+      `<div id = "sortArr12">Dãy xóa 3 phần tử: ${newStrArray}</div>`
+    );
   };
   const isUpperCase = string => /^[A-Z]*$/.test(string);
 });

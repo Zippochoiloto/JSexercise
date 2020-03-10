@@ -1,3 +1,28 @@
-#cau_1 .questions {
-    display: none !important;
+.questions {
+  display: none;
+}
+
+#exercise-content {
+  padding-left: 20px;
+  color: #394284;
+  background-color: bisque;
+}
+
+#title {
+  text-align: center;
+}
+#number11 {
+  margin-left: 100px;
+}
+
+#delete_num11 {
+  margin-left: 85px;
+}
+
+#number_add11 {
+  margin-left: 10px;
+}
+
+#number_delete11 {
+  margin-left: 55px;
 }

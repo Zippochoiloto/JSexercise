@@ -19,6 +19,7 @@ $(document).ready(function() {
 
   sortArray10 = () => {
     for (let i = count_no10; i > 0; i--) {
+      $(`#date${i - 1}`).remove();
       let el = new Date($(`#10_${i}`).val());
       my_arr10.push(el);
     }
@@ -28,5 +29,6 @@ $(document).ready(function() {
         `<div id = "date${index}">${val.toLocaleDateString()}</div>`
       );
     });
+    my_arr10 = [];
   };
 });

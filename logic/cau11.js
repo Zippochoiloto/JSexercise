@@ -5,7 +5,7 @@ $(document).ready(function() {
       $(`#11_${i}`).remove();
       $(`#label${i}`).remove();
     }
-    let num = parseInt($("#11_number").val());
+    let num = parseInt($("#number11").val());
     countNo11 = num;
     for (let i = num; i > 0; i--) {
       $("#11_button").after(`<div >
@@ -20,7 +20,7 @@ $(document).ready(function() {
       $(`#11add_${i}`).remove();
       $(`#label${i}`).remove();
     }
-    let num = parseInt($("#11_number_add").val());
+    let num = parseInt($("#number_add11").val());
     countNo11Add = num;
     for (let i = num; i > 0; i--) {
       $("#11_button_add").after(`<div >
@@ -103,7 +103,7 @@ $(document).ready(function() {
 
   deleteElement = () => {
     let calculatedMyArr = [];
-    let delEl = parseInt($("#11_delete_num").val());
+    let delEl = parseInt($("#delete_num11").val());
     for (let i = 1; i <= countNo11; i++) {
       calculatedMyArr.push(parseInt($(`#11_${i}`).val()));
     }
@@ -182,7 +182,7 @@ $(document).ready(function() {
     for (let i = 1; i <= countNo11; i++) {
       calculatedMyArr.push(parseInt($(`#11_${i}`).val()));
     }
-    let delEl = parseInt($("#11_number_delete").val());
+    let delEl = parseInt($("#number_delete11").val());
     let del3ElArray = calculatedMyArr;
     let delElAfterArray = calculatedMyArr;
     del3ElArray.map((val, index) => {
